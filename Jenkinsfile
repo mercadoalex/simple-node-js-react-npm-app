@@ -1,14 +1,8 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-bulleye-slim'
-            args: '-p 3000:3000'    
-        } 
-    }
+    agent any 
     stages {
         stage('Build'){
             steps {
-                sh 'npm install'
                 echo "Construimos el proyecto JS"
             }
         }
